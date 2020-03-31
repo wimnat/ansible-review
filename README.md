@@ -132,6 +132,11 @@ Your playbooks and roles should declare what version of standards you are
 using, otherwise ansible-review assumes you're using the latest. The declaration
 is done by adding standards version as first line in the file. e.g.
 
+The `version` dict key in a standard is optional. However, if it is not specified,
+ansible-review will just print WARN messages and always exit with `0`. In order to
+break builds and for `pre-commit` to work properly you should set the `version` key
+for every standard.
+
 ```
 # Standards: 1.2
 ```
